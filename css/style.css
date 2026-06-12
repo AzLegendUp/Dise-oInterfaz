@@ -1,0 +1,238 @@
+    :root {
+        
+        --blanco: #ffffff;
+        --negro: #000000;
+    
+    }
+    @font-face {
+        font-family: 'SamuraiFont';
+        src:  url('../typografia/SamuraiBlast.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    html {
+        box-sizing: border-box;
+        font-size: 62.5%;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    body {
+        font-size: 1.6rem;
+    
+    }
+    /* Globales */
+    .contenedor {
+        max-width: 120rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    }
+
+
+
+    /* HEADER */
+
+    .hero {
+        position: relative;
+            background-image: url(../img/hero.jpg);
+            height: 50rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+    }
+
+    .luna {
+        position: absolute;
+        bottom: 0;
+
+    }
+
+    .title{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  z-index: 5;
+}
+
+/* TÍTULO */
+.title h1{
+  margin: 0;
+  font-family: 'SamuraiFont';
+  text-transform: uppercase;
+  letter-spacing: .6rem;
+
+  /* RESPONSIVE REAL */
+  font-size: clamp(4rem, 10vw, 10rem);
+}
+
+/* SUBTÍTULO */
+.subtitle{
+  margin-top: 1.2rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: .25rem;
+  text-transform: uppercase;
+  opacity: .75;
+}
+
+
+
+
+
+    @media (min-width: 768px) {
+        .title {
+            position: absolute;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-family: 'SamuraiFont';
+            font-size: 10rem;
+            top: 40rem;
+            left: 50rem;
+        
+        }
+    }
+
+    @media (min-width: 360px) {
+        .hero {
+            height: 70rem;
+        }
+    }
+
+    .imagen-samurai {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+    }
+
+
+    @media (min-width: 768px) {
+        .hero {
+            height: 102rem;
+            position: relative;
+        }
+
+        .luna {
+            position: absolute;
+            width: 60rem;
+            bottom: 0;
+            right: 0;
+            
+            
+        }
+    }
+
+    /*main*/
+.cards-color {
+    background-color: #1F2C51;
+}
+    
+    .cards{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 3rem 1.6rem;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2.2rem;
+    background-color: #1F2C51;
+    }
+
+    /* tarjeta base */
+    .card{
+    grid-column: span 2;              /* abajo: 3 tarjetas (2+2+2) */
+    background: #000;
+    
+    padding: 2.2rem;
+    min-height: 360px;
+
+    display: grid;
+    align-content: start;
+    justify-items: center;
+    gap: 1.6rem;
+
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,.45);
+    }
+
+    /* las 2 de arriba */
+    .card--wide{
+    grid-column: span 3;              /* arriba: 2 tarjetas (3+3) */
+    min-height: 420px;
+    }
+
+    .card__title{
+    margin: 0;
+    color: #fff;
+    letter-spacing: .35rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    }
+
+    /* imagen */
+    .card__img{
+    width: 100%;
+    max-width: 320px;
+    height: 260px;
+    object-fit: contain;              /* no se deforma */
+    }
+
+
+
+    /* hover pro */
+    .card:hover{
+    transform: translateY(-4px);
+    transition: .2s ease;
+    border-color: rgba(124,58,237,.4);
+    }
+
+    /* responsive: en móvil que se vea 1 por fila */
+    @media (max-width: 900px){
+    .cards{ grid-template-columns: repeat(2, 1fr); }
+    .card, .card--wide{ grid-column: span 2; }
+    .card{ min-height: 320px; }
+    }
+
+
+    /* Para poder posicionar la imagen dentro de esa tarjeta */
+    .card-teclados{
+    position: relative;
+    overflow: hidden; /* evita que se salga feo */
+    }
+
+    /* Pegada a la derecha */
+    .card-teclados .card__img--right{
+    position: absolute;
+    right: 0;        /* pegada totalmente a la derecha */
+    top: 8rem;       /* ajusta esto si la quieres más arriba/abajo */
+    width: 34rem;    /* ajusta tamaño */
+    height: auto;
+    max-width: none; /* importante para que no limite */
+    }
+
+    /* STRAPS: imagen abajo a la derecha */
+.card-straps{
+  position: relative;
+  overflow: hidden;
+}
+
+.card-straps .card__img--bottom-right{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 26rem;      /* ajusta según el diseño */
+  height: auto;
+  max-width: none;
+}
+
